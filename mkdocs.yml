@@ -2,8 +2,10 @@ site_name: Tutorials
 
 theme:
   name: material
+  features:
+    - content.code.copy
 
-markdown_extensions:
+markdown_extensions: 
   # Python Markdown
   - abbr
   - admonition

@@ -45,14 +45,28 @@ brew install cmake
 ```
 
 After all the necessary tools (`OpenMP` and `cmake`) have been installed, we can start the building process.
-The first thing you should do is traversing to the `/path/to/moscal2.0/code` directory
+The first thing you should do is traversing to the `/path/to/moscal2.0/code` directory.
 
 ```bash
 cd /path/to/moscal2.0/code
 ```
 
-Then, you will need to create a new file in the `code` directory named `CMakeLists.txt`. The you you copy the 
-follying content in your local `CMakeLists.txt` file . 
+!!! info "Note"
+    The current version of `moscal2.0` code has a redundant line, which spoils the minimal build. 
+    We are sorry that you have to comment out one of the line in file `/path/to/moscal2.0/code/include/headfile.hpp`
+    ```bash
+    # open the file /path/to/moscal2.0/code/include/headfile.hpp
+    # go to the line that says "include <openssl/md5.h>"
+    # then comment this line out by `//`
+    # hint: this line was the 14-th line in headfile.hpp (for Commit bc62005f);
+    ```
+    If you have done the comment, you shall have
+    ```cpp
+    // include <openssl/md5.h>
+    ```
+    If you cannot find this line, or see this line already commented. That mean this redundancy is patched.
+
+Then, you will need to create a new file in the `code` directory named `CMakeLists.txt`. Then you copy the following `CMakeLists.txt` content to your local file. 
 ```cmake
 cmake_minimum_required(VERSION 3.12)
 project(MOSCAL2.0 LANGUAGES CXX)
