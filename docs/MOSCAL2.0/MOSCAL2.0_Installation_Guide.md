@@ -181,6 +181,8 @@ If you didn't see any red alerts and error messages, you can go out and check th
 These, are indeed the executables you need to run the open quantum simulation examples. On how to use these binaries, see the python examples in `/path/to/moscal2.0/test`. All the above, concludes the building process for the 
 
 ### Extra efficiency from facebook's folly library.
+!!! bug
+    Please stop reading! The the folly part now has some bug. We cannot use the full version of `MOSCAL2.0` yet!
 Now if your feel really geeky and greedy, that you feel an urge to speed up your calculations even more, you keep reading from here.
 In fact, not all the components in `MOSCAL2.0` are parallelized if you follow the minimalistic build in the last section. Particularly, the filtering algorithm will be serial.
 For geeks, this is because the parallel filtering algorithm of `MOSCAL2.0` depends on a package called `folly`. And if 
