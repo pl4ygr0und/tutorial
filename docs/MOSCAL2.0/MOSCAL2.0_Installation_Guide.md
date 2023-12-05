@@ -21,7 +21,7 @@ To harness efficiency of the `MOSCAL2.0` package, let us then go through the pro
 
 **NOTE:** If you are experienced using the `Docker`, you should follow the official instruction on [`MOSCAL2.0`](https://git.lug.ustc.edu.cn/czh123/moscal2.0) site. If you intend to build the `c++` library from scratch, follow the instructions given below.
 
-## Install on you `MacOS` machine
+## Build the `c++` library on you `MacOS` machine
 
 ### Minimal build
 First, you clone the package on your local machine.
@@ -220,7 +220,7 @@ make
 
 If `folly` is correctly installed, you shall have a fully parallelized distribution of `MOSCAL2.0`.
 
-### Built macros: control what module you are building
+### Build macros: control what module you are building
 Following the minimal build example, you obtain four binary files:
 
 - `bose_linear_2.out`: This binary is for the open quantum dynamics of a 2*2 quantum system interacting with a bosonic bath.
@@ -261,7 +261,67 @@ For your references, here is a table of macros used by `MOSCAL2.0`
 The table above showcases the most commonly used macros within `MOSCAL2.0`. While there are additional macros that unlock further modules in the `MOSCAL2.0` package, they are beyond the scope of this tutorial. For more comprehensive information, please refer to the [official documentation](https://git.lug.ustc.edu.cn/czh123/moscal2.0).
 
 
-
-
-## Install on the Westlake University HPC. 
+## Build the `c++` library on the Westlake University HPC. 
 TODO: This section is under construction.
+
+
+## Install the official `python` module
+!!! info "Note"
+    We regret to inform you that the official `python` module for `MOSCAL2.0` does not provide a `setup.py` for installation.
+    
+    While the installation of the python module is not mandatory, it significantly streamlines usage. Although there's the option to manually copy the module's source code to a desired location, opting for installation greatly simplifies the process and ensures ease of use.
+    We recommend considering installation for a more seamless experience in utilizing the python module functionalities within `MOSCAL2.0`.
+
+First, please locate the directory of the python module `deom`. You will find it in `/path/to/moscal2.0/test/deom`.
+
+Second, please choose your preferred location for this python module. Feel free to choose any location on your computer. 
+Then copy the `deom` directory here.
+```bash
+mkdir deom # choose any location
+cp -r /path/to/moscal2.0/test/deom/ deom
+```
+
+Third, create a `setup.py` file in this directory
+```python
+# setup.py
+
+ import os
+ from setuptools import setup, find_packages
+
+ def read(fname):
+     return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
+ # Read the requirements from requirements.txt file
+ with open('requirements.txt') as f:
+     requirements = f.read().splitlines()
+
+ setup(
+     name="deom",
+     description="Python interface to the c++ open quantum system program: DEOM",
+     author="czh",
+     long_description="Python interface to the c++ open quantum system program: DEOM",
+     install_requires=requirements,
+ )
+```
+and a `requirements.txt` file in this directory
+```txt
+cvxopt==1.3.2
+numpy==1.22.1
+pandas==1.5.1
+scipy==1.7.3
+sympy==1.11.1
+```
+
+!!! warning "Seggestions"
+    If you don't already use `conda` to manage python environments, consider give it a try:
+    ```bash
+    conda create -n deom python
+
+    # when every you want to use this environment 
+    conda acitvate deom
+    ```
+
+Finally, feel free to use this one liner to install the package
+```bash
+pip install -e . 
+```
