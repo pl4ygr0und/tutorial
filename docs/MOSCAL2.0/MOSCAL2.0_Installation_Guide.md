@@ -10,7 +10,7 @@ The `MOSCAL2.0` program is written in `c++` and a user interface written in `pyt
 generate inputs for the `c++` library. Therefore, without knowing the `c++` internals of `MOSCAL2.0`, the user can just write python scripts and 
 simulate open quantum systems.
 
-The `MOSCAL2.0` has the following technical advantages comparing to other implementations, for example [`HierarchicalEOM.jl`](`https://github.com/NCKU-QFort/HierarchicalEOM.jl`):
+The `MOSCAL2.0` has the following technical advantages comparing to other implementations, for example [`HierarchicalEOM.jl`](https://github.com/NCKU-QFort/HierarchicalEOM.jl):
 
 - `MOSCAL2.0` has a clean theory: the library is built based on the idea of **Dissipatons**, a quasi-particle describing system-bath interactions. In this idea, the auxiliary density operators (ADOs) are regarded as different degrees of excitations of the non-interacting system, i.e., the dissipaton density operators (DDOs).  Such theoretical designs help our collaborator derive useful algebras to efficiently manipulate DDOs, more importantly derive new applications such as quadratic-system bath coupling easily.
 - `MOSCAL2.0` is Efficient: the library is written `c++`, with powerful parallelization and filtering schemes:
@@ -72,7 +72,13 @@ cmake_minimum_required(VERSION 3.12)
 project(MOSCAL2.0 LANGUAGES CXX)
 set(CMAKE_BUILD_TYPE RLEASE)
 set(CMAKE_CXX_STANDARD 17)   # use modern c++ standard
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wall -lpthread -fPIE") # setup the compiler options
+
+# The compiler flags for optimization and compile time options
+add_compile_options(-O3)              # Generic maximum code optimization
+add_compile_options(-ftree-vectorize) # SIMD vectorize the loops
+add_compile_options(-funroll-loops)   # explicit optimize the loops
+add_compile_options(-fPIE)            # make code run everywhere
+add_compile_options(-Wall -Wextra -Wpedantic) # Enable warning
 
 include(GNUInstallDirs) # Enable cmake to find the system installations
 
@@ -149,7 +155,7 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/include/aux       # for operations on DDOs or Aux Density operators
 )
 
-# now define a function to build specifc applications
+### now define a function to build specifc applications
 # Define a function to build the main_threads_omp_equ_corr.cpp file
 function(build_population BINARY_NAME)
     add_executable(${BINARY_NAME} main_threads_omp_equ_corr.cpp)
@@ -174,10 +180,10 @@ function(build_population BINARY_NAME)
 
 endfunction()
 
-build_population(bose_linear_2.out NSYS=2 BOSE_LINEAR NORMAL)   # 2x2 system coupled with a linear boson environment
-build_population(bose_quad_2.out NSYS=2 BOSE_QUAD NORMAL)       # 2x2 system coupled with a quadratic boson environment
-build_population(bose_linear.out BOSE_LINEAR NORMAL)            # a general system (meaning the system matrix is any nxn matrix) coupled with a linear boson environment
-build_population(bose_quad.out BOSE_QUAD NORMAL)                # a general system (meaning the system matrix is any nxn matrix) coupled with a quadratic boson environment
+build_population(bose_linear_2.out NSYS=2 BOSE_LINEAR NORMAL)       # 2x2 system coupled with a linear boson environment
+build_population(bose_quad_2.out NSYS=2 BOSE_QUAD NORMAL)           # 2x2 system coupled with a quadratic boson environment
+build_population(bose_linear.out BOSE_LINEAR NORMAL)                # a general system (meaning the system matrix is any nxn matrix) coupled with a linear boson environment
+build_population(bose_quad.out BOSE_QUAD NORMAL)                    # a general system (meaning the system matrix is any nxn matrix) coupled with a quadratic boson environment
 
 ```
 This configuration file will precisely tell the `cmake` program about the detailed recipes for building `MOSCAL2.0`. 
@@ -191,12 +197,12 @@ cmake ..
 make
 ```
 If everything runs correctly, you shall see the `cmake` program handles the building process that many greens lines, (and some pinks for error). 
-If you didn't see any red alerts and error messages, you can go out and check that you get new files 'bose_linear.out', 'bose_linear_2.out', 'bose_quad.out' and 'bose_quad_2.out' in your `build` directory. 
+If you didn't see any red alerts and error messages, you can go out and check that you get new files `bose_linear.out`, `bose_linear_2.out`, `bose_quad.out` and `bose_quad_2.out` in your `build` directory. 
 These, are indeed the executables you need to run the open quantum simulation examples. On how to use these binaries, see the python examples in `/path/to/moscal2.0/test`. All the above, concludes the building process for the 
 
-### Extra efficiency from facebook's folly library.
+### Extra efficiency from Facebook's folly library.
 !!! bug
-    Please stop reading! The the folly part now has some bug. We cannot use the full version of `MOSCAL2.0` yet!
+    Please stop reading for now! The `folly` part now has some bug. We cannot use the full version of `MOSCAL2.0` yet!
 
 Now if your feel really geeky and greedy, that you feel an urge to speed up your calculations even more, you keep reading from here.
 In fact, not all the components in `MOSCAL2.0` are parallelized if you follow the minimalistic build in the last section. Particularly, the filtering algorithm will be serial.
@@ -215,7 +221,47 @@ make
 If `folly` is correctly installed, you shall have a fully parallelized distribution of `MOSCAL2.0`.
 
 ### Built macros: control what module you are building
-TODO: This section is under construction.
+Following the minimal build example, you obtain four binary files:
+
+- `bose_linear_2.out`: This binary is for the open quantum dynamics of a 2*2 quantum system interacting with a bosonic bath.
+- `bose_quadratic_2.out`: This binary is for the open quantum dynamics of a 2*2 quantum system interacting with a bosonic bath.
+- `bose_linear.out`: This binary is for the open quantum dynamics of an arbitrary N*N quantum system interacting with a bosonic bath. 
+- `bose_quadratic.out`: This binary is for the open quantum dynamics of an arbitrary N*N quantum system interacting with a bosonic bath. 
+
+What if you want to study some other system bath interactions? For example, a fermionic system? 
+
+To build other `MOSCAL2.0` modules, a basic understanding of **macros** becomes essential. In essence, macros serve as a means of communication with the compiler. In the context of `MOSCAL2.0`, **macros** are crucial for specifying the desired program configurations. For instance, if you aim to study a linear system-bath interaction involving a bosonic bath, you'd communicate this intent to the compiler using the `BOSE_LINEAR` macro. Additionally, when dealing with smaller systems, like a 2x2 setup, employing the `NSYS=2` macro informs the compiler to generate an optimized program leveraging stack allocation. 
+
+!!! warning
+    Stack allocation is beneficial for small matrices, typically those with dimensions up to 4x4. It optimizes memory management and improves performance. **However**, for larger systems exceeding dimension of 4, it's advisable to avoid specifying the `NSYS` macro to prevent potential memory issues associated with stack limitations.
+
+In practical application, the `CMakeLists.txt` file provides a convenient `cmake` function called `build_population` for obtaining the desired binaries. You can utilize this function by specifying the necessary macros. The format is as follows:
+```cmake
+build_population(your_binary_name MACRO1 MACRO2 ...)
+```
+For instance, suppose you aim to compile a 4x4 system coupled with a linear fermionic system-bath coupling program. Simply include this line in your `CMakeLists.txt`
+```cmake
+build_population(fermi_linear_4.out NSYS=4 FERMI_LINEAR NORMAL)
+```
+
+For your references, here is a table of macros used by `MOSCAL2.0`
+
+| Macro             | Description                                                               |
+| :---------------: | :-------------------------------------------------------------------------|
+| `BOSE_LINEAR`     | Specifies a linear system-bath interaction with bosons.                    |
+| `BOSE_QUAD`       | Specifies a quadratic system-bath interaction with bosons.                 |
+| `FERMI_LINEAR`    | Specifies a linear system-bath interaction with fermions.                  |
+| `FERMI_QUAD`      | Specifies a quadratic system-bath interaction with fermions.               |
+| `SPARSE`          | Enforces the use of sparse matrices, ideal for large, less dense systems.  |
+| `NORMAL`          | Controls an unspecified filtering algorithm (default setting).             |
+| `NSYS=4`          | Informs the compiler to optimize for a system of size 4, <br> potentially improving computations for this specific size.                    |
+
+
+
+The table above showcases the most commonly used macros within `MOSCAL2.0`. While there are additional macros that unlock further modules in the `MOSCAL2.0` package, they are beyond the scope of this tutorial. For more comprehensive information, please refer to the [official documentation](https://git.lug.ustc.edu.cn/czh123/moscal2.0).
+
+
+
 
 ## Install on the Westlake University HPC. 
 TODO: This section is under construction.
