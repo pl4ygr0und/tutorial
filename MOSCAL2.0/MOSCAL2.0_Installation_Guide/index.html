@@ -1,0 +1,864 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../MOSCAL2.0_Hands_on_example/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
+    
+    
+      
+        <title>Installation guide for MOSCAL2.0 - Tutorials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fad675c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation-guide-for-moscal20" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Tutorials" class="md-header__button md-logo" aria-label="Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tutorials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation guide for MOSCAL2.0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Tutorials" class="md-nav__button md-logo" aria-label="Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MOSCAL2.0
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            MOSCAL2.0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MOSCAL2.0_Hands_on_example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MOSCAL2.0 Hands on example
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Installation guide for MOSCAL2.0
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Installation guide for MOSCAL2.0
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-the-c-library-on-you-macos-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build the c++ library on you MacOS machine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Build the c++ library on you MacOS machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimal build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra-efficiency-from-facebooks-folly-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra efficiency from Facebook's folly library.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-macros-control-what-module-you-are-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build macros: control what module you are building
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-the-c-library-on-the-westlake-university-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build the c++ library on the Westlake University HPC.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-official-python-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install the official python module
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-the-c-library-on-you-macos-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build the c++ library on you MacOS machine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Build the c++ library on you MacOS machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimal build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra-efficiency-from-facebooks-folly-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra efficiency from Facebook's folly library.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-macros-control-what-module-you-are-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build macros: control what module you are building
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-the-c-library-on-the-westlake-university-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build the c++ library on the Westlake University HPC.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-official-python-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install the official python module
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="installation-guide-for-moscal20">Installation guide for MOSCAL2.0<a class="headerlink" href="#installation-guide-for-moscal20" title="Permanent link">&para;</a></h1>
+<p><code>MOSCAL2.0</code> is a very useful software to study open quantun systems. The software is developed by one of our collaborators, Dr. YiJing Yan's group.
+The project is now open on <a href="https://git.lug.ustc.edu.cn/czh123/moscal2.0">the USTC gitlab page</a>. </p>
+<div class="admonition info">
+<p class="admonition-title">TLDR</p>
+<p>The following is a simple description of the <code>MOSCAL2.0</code> pacakge, if you only want to compile the library, you can skip this and just go to the minimal build section.</p>
+</div>
+<p>The <code>MOSCAL2.0</code> program is written in <code>c++</code> and a user interface written in <code>python</code>. The design idea is to use simple python scripts to 
+generate inputs for the <code>c++</code> library. Therefore, without knowing the <code>c++</code> internals of <code>MOSCAL2.0</code>, the user can just write python scripts and 
+simulate open quantum systems.</p>
+<p>The <code>MOSCAL2.0</code> has the following technical advantages comparing to other implementations, for example <a href="https://github.com/NCKU-QFort/HierarchicalEOM.jl"><code>HierarchicalEOM.jl</code></a>:</p>
+<ul>
+<li><code>MOSCAL2.0</code> has a clean theory: the library is built based on the idea of <strong>Dissipatons</strong>, a quasi-particle describing system-bath interactions. In this idea, the auxiliary density operators (ADOs) are regarded as different degrees of excitations of the non-interacting system, i.e., the dissipaton density operators (DDOs).  Such theoretical designs help our collaborator derive useful algebras to efficiently manipulate DDOs, more importantly derive new applications such as quadratic-system bath coupling easily.</li>
+<li><code>MOSCAL2.0</code> is Efficient: the library is written <code>c++</code>, with powerful parallelization and filtering schemes:<ul>
+<li>Many operations on the DDOs are written in parallel algorithms, and these algorithms are carefully designed to be thread-safe.</li>
+<li>Instead of make a hard truncation over the hierarchical tiers and use a fixed propagation matrix, <code>MOSCAL2.0</code> applies a dynamic filtering scheme. Particularly, the user will apply a soft hierarchical cutoff. As a result, all the possible DDOs within the maximum hierarchical depth can be considered if they are numerically significant enough. The filtering tolerance here is input by the user. With filtering, it is easy to choose a very deep hierarchical depth, with way less computation cost by taking advantage of the sparse nature of the HEOM propagator.</li>
+</ul>
+</li>
+</ul>
+<p>To harness efficiency of the <code>MOSCAL2.0</code> package, let us then go through the process of build the <code>c++</code> binaries. </p>
+<p><strong>NOTE:</strong> If you are experienced using the <code>Docker</code>, you should follow the official instruction on <a href="https://git.lug.ustc.edu.cn/czh123/moscal2.0"><code>MOSCAL2.0</code></a> site. If you intend to build the <code>c++</code> library from scratch, follow the instructions given below.</p>
+<h2 id="build-the-c-library-on-you-macos-machine">Build the <code>c++</code> library on you <code>MacOS</code> machine<a class="headerlink" href="#build-the-c-library-on-you-macos-machine" title="Permanent link">&para;</a></h2>
+<h3 id="minimal-build">Minimal build<a class="headerlink" href="#minimal-build" title="Permanent link">&para;</a></h3>
+<p>First, you clone the package on your local machine.
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://git.lug.ustc.edu.cn/czh123/moscal2.0<span class="w"> </span>
+</code></pre></div></p>
+<p>Then, you need to install the necessary dependencies of <code>MOSCAL2.0</code>.<br />
+- The parallelization of <code>MOSCAL2.0</code> depends on <code>OpenMP</code>.
+- The easy building of the <code>MOSCAL2.0</code> depends on <code>cmake</code>.
+Luckily, our group member has a <code>MACOS</code> workstation. Installing these dependent packages can be simplified by
+<a href="https://brew.sh"><code>homebrew</code></a>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># If you don&#39;t already have homebrew installed, </span>
+<span class="c1"># you can go to https://brew.sh to learn about it and install homebrew on your computer</span>
+<span class="c1"># after brew is on you machine, just execute </span>
+brew<span class="w"> </span>install<span class="w"> </span>libomp
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export OpenMP_ROOT=</span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/opt/libomp&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc<span class="w"> </span><span class="c1"># This ensures cmake finds OpenMP</span>
+brew<span class="w"> </span>install<span class="w"> </span>cmake
+</code></pre></div>
+<p>After all the necessary tools (<code>OpenMP</code> and <code>cmake</code>) have been installed, we can start the building process.
+The first thing you should do is traversing to the <code>/path/to/moscal2.0/code</code> directory.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/path/to/moscal2.0/code
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Note</p>
+<p>The current version of <code>moscal2.0</code> code has a redundant line, which spoils the minimal build. 
+We are sorry that you have to comment out one of the line in file <code>/path/to/moscal2.0/code/include/headfile.hpp</code>
+<div class="highlight"><pre><span></span><code><span class="c1"># open the file /path/to/moscal2.0/code/include/headfile.hpp</span>
+<span class="c1"># go to the line that says &quot;include &lt;openssl/md5.h&gt;&quot;</span>
+<span class="c1"># then comment this line out by `//`</span>
+<span class="c1"># hint: this line was the 14-th line in headfile.hpp (for Commit bc62005f);</span>
+</code></pre></div>
+If you have done the comment, you shall have
+<div class="highlight"><pre><span></span><code><span class="c1">// include &lt;openssl/md5.h&gt;</span>
+</code></pre></div>
+If you cannot find this line, or see this line already commented. That mean this redundancy is patched.</p>
+</div>
+<p>Then, you will need to create a new file in the <code>code</code> directory named <code>CMakeLists.txt</code>. Then you copy the following <code>CMakeLists.txt</code> content to your local file. 
+<div class="highlight"><pre><span></span><code><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.12</span><span class="p">)</span>
+<span class="nb">project</span><span class="p">(</span><span class="s">MOSCAL2.0</span><span class="w"> </span><span class="s">LANGUAGES</span><span class="w"> </span><span class="s">CXX</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_BUILD_TYPE</span><span class="w"> </span><span class="s">RLEASE</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_STANDARD</span><span class="w"> </span><span class="s">17</span><span class="p">)</span><span class="w">   </span><span class="c"># use modern c++ standard</span>
+
+<span class="c"># The compiler flags for optimization and compile time options</span>
+<span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-O3</span><span class="p">)</span><span class="w">              </span><span class="c"># Generic maximum code optimization</span>
+<span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-ftree-vectorize</span><span class="p">)</span><span class="w"> </span><span class="c"># SIMD vectorize the loops</span>
+<span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-funroll-loops</span><span class="p">)</span><span class="w">   </span><span class="c"># explicit optimize the loops</span>
+<span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-fPIE</span><span class="p">)</span><span class="w">            </span><span class="c"># make code run everywhere</span>
+<span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-Wall</span><span class="w"> </span><span class="s">-Wextra</span><span class="w"> </span><span class="s">-Wpedantic</span><span class="p">)</span><span class="w"> </span><span class="c"># Enable warning</span>
+
+<span class="nb">include</span><span class="p">(</span><span class="s">GNUInstallDirs</span><span class="p">)</span><span class="w"> </span><span class="c"># Enable cmake to find the system installations</span>
+
+<span class="c"># Find openssl</span>
+<span class="c"># find_package(OpenSSL REQUIRED)</span>
+
+<span class="c"># Find libomp for parallelization</span>
+<span class="nb">if</span><span class="w"> </span><span class="p">(</span><span class="s">APPLE</span><span class="p">)</span>
+<span class="w">    </span><span class="c"># execute shell command OpenMP_ROOT=$(brew --prefix)/opt/libomp</span>
+<span class="w">    </span><span class="nb">find_program</span><span class="p">(</span><span class="s">HOMEBREW_EXECUTABLE</span><span class="w"> </span><span class="s">brew</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">if</span><span class="w"> </span><span class="p">(</span><span class="s">HOMEBREW_EXECUTABLE</span><span class="p">)</span>
+<span class="w">        </span><span class="nb">execute_process</span><span class="p">(</span>
+<span class="w">            </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">HOMEBREW_EXECUTABLE</span><span class="o">}</span><span class="w"> </span><span class="s">--prefix</span>
+<span class="w">            </span><span class="s">OUTPUT_VARIABLE</span><span class="w"> </span><span class="s">BREW_PREFIX</span>
+<span class="w">            </span><span class="s">OUTPUT_STRIP_TRAILING_WHITESPACE</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">        </span><span class="nb">set</span><span class="p">(</span><span class="s">OpenMP_ROOT</span><span class="w"> </span><span class="s2">&quot;${BREW_PREFIX}/opt/libomp&quot;</span><span class="w"> </span><span class="s">CACHE</span><span class="w"> </span><span class="s">PATH</span><span class="w"> </span><span class="s2">&quot;Path to libomp&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
+<span class="nb">endif</span><span class="p">()</span>
+<span class="nb">find_package</span><span class="p">(</span><span class="s">OpenMP</span><span class="p">)</span>
+
+<span class="nb">if</span><span class="p">(</span><span class="s">OpenMP_FOUND</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;OpenMP found&quot;</span><span class="p">)</span>
+<span class="nb">else</span><span class="p">()</span>
+<span class="w">    </span><span class="nb">if</span><span class="w"> </span><span class="p">(</span><span class="s">APPLE</span><span class="p">)</span>
+<span class="w">        </span><span class="nb">if</span><span class="p">(</span><span class="s">CMAKE_SYSTEM_PROCESSOR</span><span class="w"> </span><span class="s">MATCHES</span><span class="w"> </span><span class="s2">&quot;x86_64&quot;</span><span class="p">)</span><span class="w"> </span><span class="c"># Intel Mac</span>
+<span class="w">            </span><span class="c"># Set default paths for libomp</span>
+<span class="w">            </span><span class="nb">set</span><span class="p">(</span><span class="s">ENV{LDFLAGS}</span><span class="w"> </span><span class="s2">&quot;-L/usr/local/opt/libomp/lib&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="nb">set</span><span class="p">(</span><span class="s">ENV{CPPFLAGS}</span><span class="w"> </span><span class="s2">&quot;-I/usr/local/opt/libomp/include&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="nb">elseif</span><span class="p">(</span><span class="s">CMAKE_SYSTEM_PROCESSOR</span><span class="w"> </span><span class="s">MATCHES</span><span class="w"> </span><span class="s2">&quot;arm64&quot;</span><span class="p">)</span><span class="w"> </span><span class="c"># Apple Silicon</span>
+<span class="w">            </span><span class="c"># Set default paths for arm64 Macs</span>
+<span class="w">            </span><span class="nb">set</span><span class="p">(</span><span class="s">ENV{LDFLAGS}</span><span class="w"> </span><span class="s2">&quot;-L/opt/homebrew/opt/libomp/lib&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="nb">set</span><span class="p">(</span><span class="s">ENV{CPPFLAGS}</span><span class="w"> </span><span class="s2">&quot;-I/opt/homebrew/opt/libomp/include&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="nb">endif</span><span class="p">()</span>
+<span class="w">    </span><span class="nb">else</span><span class="p">()</span>
+<span class="w">        </span><span class="c"># set the default path for any unix machine</span>
+<span class="w">        </span><span class="nb">set</span><span class="p">(</span><span class="s">ENV{LDFLAGS}</span><span class="w"> </span><span class="s2">&quot;-L/usr/local/opt/libomp/lib&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="nb">set</span><span class="p">(</span><span class="s">ENV{CPPFLAGS}</span><span class="w"> </span><span class="s2">&quot;-I/usr/local/opt/libomp/include&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
+
+<span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">WARNING</span><span class="w"> </span><span class="s2">&quot;OpenMP not found, using default paths instead&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="c"># Set the LDFLAGS and CPPFLAGS manually</span>
+<span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_FLAGS</span><span class="w"> </span><span class="s2">&quot;${CMAKE_CXX_FLAGS} $ENV{LDFLAGS} $ENV{CPPFLAGS}&quot;</span><span class="p">)</span>
+<span class="nb">endif</span><span class="p">()</span>
+
+<span class="c"># do not try to find pacakge for Eigen3, just use shipped one</span>
+<span class="c"># do not try to find pacakge for nlohmann, just use the shipped one</span>
+
+<span class="c"># find folly to harness the parallelization algorithms</span>
+<span class="nb">find_package</span><span class="p">(</span><span class="s">Folly</span><span class="p">)</span>
+<span class="nb">if</span><span class="p">(</span><span class="s">Folly_FOUND</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;Found Folly: &quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;Include directory: ${FOLLY_INCLUDE_DIR}&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;Library: ${FOLLY_LIBRARIES}&quot;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c"># Look for gflags</span>
+<span class="w">    </span><span class="nb">find_package</span><span class="p">(</span><span class="s">gflags</span><span class="p">)</span>
+
+<span class="w">    </span><span class="nb">if</span><span class="p">(</span><span class="s">gflags_FOUND</span><span class="p">)</span>
+<span class="w">        </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;Found gflags:&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;Include directory: ${GFLAGS_INCLUDE_DIRS}&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;Libraries: ${GFLAGS_LIBRARIES}&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">else</span><span class="p">()</span>
+<span class="w">        </span><span class="nb">message</span><span class="p">(</span><span class="s">WARNING</span><span class="w"> </span><span class="s2">&quot;gflags not found.&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
+<span class="nb">else</span><span class="p">()</span>
+<span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">WARNING</span><span class="w"> </span><span class="s2">&quot;Folly not found. The built library will be un-parallelizable.&quot;</span><span class="p">)</span>
+<span class="nb">endif</span><span class="p">()</span>
+
+<span class="c"># now make all the subdirectories visible to cmake</span>
+<span class="nb">include_directories</span><span class="p">(</span>
+<span class="w">    </span><span class="o">${</span><span class="nv">CMAKE_CURRENT_SOURCE_DIR</span><span class="o">}</span><span class="s">/include</span>
+<span class="w">    </span><span class="o">${</span><span class="nv">CMAKE_CURRENT_SOURCE_DIR</span><span class="o">}</span><span class="s">/include/low_level</span><span class="w"> </span><span class="c"># for low-level implementations of DDO EOMs</span>
+<span class="w">    </span><span class="o">${</span><span class="nv">CMAKE_CURRENT_SOURCE_DIR</span><span class="o">}</span><span class="s">/include/aux</span><span class="w">       </span><span class="c"># for operations on DDOs or Aux Density operators</span>
+<span class="p">)</span>
+
+<span class="c">### now define a function to build specifc applications</span>
+<span class="c"># Define a function to build the main_threads_omp_equ_corr.cpp file</span>
+<span class="nb">function</span><span class="p">(</span><span class="s">build_population</span><span class="w"> </span><span class="s">BINARY_NAME</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">add_executable</span><span class="p">(</span><span class="o">${</span><span class="nv">BINARY_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">main_threads_omp_equ_corr.cpp</span><span class="p">)</span>
+
+<span class="w">    </span><span class="nb">target_compile_definitions</span><span class="p">(</span><span class="o">${</span><span class="nv">BINARY_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="o">${</span><span class="nv">ARGN</span><span class="o">}</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c"># target_link_libraries(${BINARY_NAME} PRIVATE OpenSSL::SSL)</span>
+<span class="w">    </span><span class="nb">if</span><span class="w"> </span><span class="p">(</span><span class="s">OpenMP_FOUND</span><span class="p">)</span>
+<span class="w">        </span><span class="c"># use OpenMP::OpenMP_CXX</span>
+<span class="w">        </span><span class="nb">target_link_libraries</span><span class="p">(</span><span class="o">${</span><span class="nv">BINARY_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">OpenMP::OpenMP_CXX</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
+
+<span class="w">    </span><span class="nb">if</span><span class="w"> </span><span class="p">(</span><span class="s">Folly_FOUND</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">target_link_libraries</span><span class="p">(</span><span class="o">${</span><span class="nv">BINARY_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">PRIVATE</span>
+<span class="w">        </span><span class="o">${</span><span class="nv">GFLAGS_LIBRARIES</span><span class="o">}</span>
+<span class="w">        </span><span class="s">Folly::folly</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">    </span><span class="nb">else</span><span class="p">()</span>
+<span class="w">        </span><span class="nb">target_compile_definitions</span><span class="p">(</span><span class="o">${</span><span class="nv">BINARY_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">STD</span><span class="p">)</span>
+<span class="w">        </span><span class="nb">message</span><span class="p">(</span><span class="s">WARNING</span><span class="w"> </span><span class="s2">&quot;Folly not found. Use the STD macro. This build will not be parallelized since you don&#39;t have Folly.&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
+
+<span class="nb">endfunction</span><span class="p">()</span>
+
+<span class="nb">build_population</span><span class="p">(</span><span class="s">bose_linear_2.out</span><span class="w"> </span><span class="s">NSYS=2</span><span class="w"> </span><span class="s">BOSE_LINEAR</span><span class="w"> </span><span class="s">NORMAL</span><span class="p">)</span><span class="w">       </span><span class="c"># 2x2 system coupled with a linear boson environment</span>
+<span class="nb">build_population</span><span class="p">(</span><span class="s">bose_quad_2.out</span><span class="w"> </span><span class="s">NSYS=2</span><span class="w"> </span><span class="s">BOSE_QUAD</span><span class="w"> </span><span class="s">NORMAL</span><span class="p">)</span><span class="w">           </span><span class="c"># 2x2 system coupled with a quadratic boson environment</span>
+<span class="nb">build_population</span><span class="p">(</span><span class="s">bose_linear.out</span><span class="w"> </span><span class="s">BOSE_LINEAR</span><span class="w"> </span><span class="s">NORMAL</span><span class="p">)</span><span class="w">                </span><span class="c"># a general system (meaning the system matrix is any nxn matrix) coupled with a linear boson environment</span>
+<span class="nb">build_population</span><span class="p">(</span><span class="s">bose_quad.out</span><span class="w"> </span><span class="s">BOSE_QUAD</span><span class="w"> </span><span class="s">NORMAL</span><span class="p">)</span><span class="w">                    </span><span class="c"># a general system (meaning the system matrix is any nxn matrix) coupled with a quadratic boson environment</span>
+</code></pre></div>
+This configuration file will precisely tell the <code>cmake</code> program about the detailed recipes for building <code>MOSCAL2.0</code>. </p>
+<p>Finally, we can build the <code>MOSCAL2.0</code> easily 
+<div class="highlight"><pre><span></span><code><span class="c1"># please create CMakeLists.txt in /path/to/moscal2.0/code </span>
+mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w"> </span>..
+make
+</code></pre></div>
+If everything runs correctly, you shall see the <code>cmake</code> program handles the building process that many greens lines, (and some pinks for error). 
+If you didn't see any red alerts and error messages, you can go out and check that you get new files <code>bose_linear.out</code>, <code>bose_linear_2.out</code>, <code>bose_quad.out</code> and <code>bose_quad_2.out</code> in your <code>build</code> directory. 
+These, are indeed the executables you need to run the open quantum simulation examples. On how to use these binaries, see the python examples in <code>/path/to/moscal2.0/test</code>. All the above, concludes the building process for the </p>
+<h3 id="extra-efficiency-from-facebooks-folly-library">Extra efficiency from Facebook's folly library.<a class="headerlink" href="#extra-efficiency-from-facebooks-folly-library" title="Permanent link">&para;</a></h3>
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<p>Please stop reading for now! The <code>folly</code> part now has some bug. We cannot use the full version of <code>MOSCAL2.0</code> yet!</p>
+</div>
+<p>Now if your feel really geeky and greedy, that you feel an urge to speed up your calculations even more, you keep reading from here.
+In fact, not all the components in <code>MOSCAL2.0</code> are parallelized if you follow the minimalistic build in the last section. Particularly, the filtering algorithm will be serial.
+For geeks, this is because the parallel filtering algorithm of <code>MOSCAL2.0</code> depends on a package called <code>folly</code>. And if </p>
+<p>TLDR; you will have to install the <code>folly</code> library to unleash the full power of <code>MOSCAL2.0</code>. Luckily, if you have <code>homebrew</code>, this will be quite easy.
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>folly
+<span class="c1"># after properly install the folly library, go on rebuild the `MOSCAL2.0` program.</span>
+<span class="c1"># cmake is smart enough to see if folly is installed.</span>
+<span class="nb">cd</span><span class="w"> </span>/path/to/moscal2.0/code/build
+cmake<span class="w"> </span>..
+make
+</code></pre></div></p>
+<p>If <code>folly</code> is correctly installed, you shall have a fully parallelized distribution of <code>MOSCAL2.0</code>.</p>
+<h3 id="build-macros-control-what-module-you-are-building">Build macros: control what module you are building<a class="headerlink" href="#build-macros-control-what-module-you-are-building" title="Permanent link">&para;</a></h3>
+<p>Following the minimal build example, you obtain four binary files:</p>
+<ul>
+<li><code>bose_linear_2.out</code>: This binary is for the open quantum dynamics of a 2*2 quantum system interacting with a bosonic bath.</li>
+<li><code>bose_quadratic_2.out</code>: This binary is for the open quantum dynamics of a 2*2 quantum system interacting with a bosonic bath.</li>
+<li><code>bose_linear.out</code>: This binary is for the open quantum dynamics of an arbitrary N*N quantum system interacting with a bosonic bath. </li>
+<li><code>bose_quadratic.out</code>: This binary is for the open quantum dynamics of an arbitrary N*N quantum system interacting with a bosonic bath. </li>
+</ul>
+<p>What if you want to study some other system bath interactions? For example, a fermionic system? </p>
+<p>To build other <code>MOSCAL2.0</code> modules, a basic understanding of <strong>macros</strong> becomes essential. In essence, macros serve as a means of communication with the compiler. In the context of <code>MOSCAL2.0</code>, <strong>macros</strong> are crucial for specifying the desired program configurations. For instance, if you aim to study a linear system-bath interaction involving a bosonic bath, you'd communicate this intent to the compiler using the <code>BOSE_LINEAR</code> macro. Additionally, when dealing with smaller systems, like a 2x2 setup, employing the <code>NSYS=2</code> macro informs the compiler to generate an optimized program leveraging stack allocation. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Stack allocation is beneficial for small matrices, typically those with dimensions up to 4x4. It optimizes memory management and improves performance. <strong>However</strong>, for larger systems exceeding dimension of 4, it's advisable to avoid specifying the <code>NSYS</code> macro to prevent potential memory issues associated with stack limitations.</p>
+</div>
+<p>In practical application, the <code>CMakeLists.txt</code> file provides a convenient <code>cmake</code> function called <code>build_population</code> for obtaining the desired binaries. You can utilize this function by specifying the necessary macros. The format is as follows:
+<div class="highlight"><pre><span></span><code><span class="nb">build_population</span><span class="p">(</span><span class="s">your_binary_name</span><span class="w"> </span><span class="s">MACRO1</span><span class="w"> </span><span class="s">MACRO2</span><span class="w"> </span><span class="s">...</span><span class="p">)</span>
+</code></pre></div>
+For instance, suppose you aim to compile a 4x4 system coupled with a linear fermionic system-bath coupling program. Simply include this line in your <code>CMakeLists.txt</code>
+<div class="highlight"><pre><span></span><code><span class="nb">build_population</span><span class="p">(</span><span class="s">fermi_linear_4.out</span><span class="w"> </span><span class="s">NSYS=4</span><span class="w"> </span><span class="s">FERMI_LINEAR</span><span class="w"> </span><span class="s">NORMAL</span><span class="p">)</span>
+</code></pre></div></p>
+<p>For your references, here is a table of macros used by <code>MOSCAL2.0</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Macro</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>BOSE_LINEAR</code></td>
+<td style="text-align: left;">Specifies a linear system-bath interaction with bosons.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>BOSE_QUAD</code></td>
+<td style="text-align: left;">Specifies a quadratic system-bath interaction with bosons.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>FERMI_LINEAR</code></td>
+<td style="text-align: left;">Specifies a linear system-bath interaction with fermions.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>FERMI_QUAD</code></td>
+<td style="text-align: left;">Specifies a quadratic system-bath interaction with fermions.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>SPARSE</code></td>
+<td style="text-align: left;">Enforces the use of sparse matrices, ideal for large, less dense systems.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>NORMAL</code></td>
+<td style="text-align: left;">Controls an unspecified filtering algorithm (default setting).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>NSYS=4</code></td>
+<td style="text-align: left;">Informs the compiler to optimize for a system of size 4, <br> potentially improving computations for this specific size.</td>
+</tr>
+</tbody>
+</table>
+<p>The table above showcases the most commonly used macros within <code>MOSCAL2.0</code>. While there are additional macros that unlock further modules in the <code>MOSCAL2.0</code> package, they are beyond the scope of this tutorial. For more comprehensive information, please refer to the <a href="https://git.lug.ustc.edu.cn/czh123/moscal2.0">official documentation</a>.</p>
+<h2 id="build-the-c-library-on-the-westlake-university-hpc">Build the <code>c++</code> library on the Westlake University HPC.<a class="headerlink" href="#build-the-c-library-on-the-westlake-university-hpc" title="Permanent link">&para;</a></h2>
+<p>TODO: This section is under construction.</p>
+<h2 id="install-the-official-python-module">Install the official <code>python</code> module<a class="headerlink" href="#install-the-official-python-module" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Note</p>
+<p>We regret to inform you that the official <code>python</code> module for <code>MOSCAL2.0</code> does not provide a <code>setup.py</code> for installation.</p>
+<p>While the installation of the python module is not mandatory, it significantly streamlines usage. Although there's the option to manually copy the module's source code to a desired location, opting for installation greatly simplifies the process and ensures ease of use.
+We recommend considering installation for a more seamless experience in utilizing the python module functionalities within <code>MOSCAL2.0</code>.</p>
+</div>
+<p>First, please locate the directory of the python module <code>deom</code>. You will find it in <code>/path/to/moscal2.0/test/deom</code>.</p>
+<p>Second, please choose your preferred location for this python module. Feel free to choose any location on your computer. 
+Then copy the <code>deom</code> directory here.
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>deom<span class="w"> </span><span class="c1"># choose any location</span>
+cp<span class="w"> </span>-r<span class="w"> </span>/path/to/moscal2.0/test/deom/<span class="w"> </span>deom
+</code></pre></div></p>
+<p>Third, create a <code>setup.py</code> file in this directory
+<div class="highlight"><pre><span></span><code><span class="c1"># setup.py</span>
+
+ <span class="kn">import</span> <span class="nn">os</span>
+ <span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+
+ <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+     <span class="k">return</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="n">fname</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+ <span class="c1"># Read the requirements from requirements.txt file</span>
+ <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;requirements.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+     <span class="n">requirements</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+
+ <span class="n">setup</span><span class="p">(</span>
+     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;deom&quot;</span><span class="p">,</span>
+     <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Python interface to the c++ open quantum system program: DEOM&quot;</span><span class="p">,</span>
+     <span class="n">author</span><span class="o">=</span><span class="s2">&quot;czh&quot;</span><span class="p">,</span>
+     <span class="n">long_description</span><span class="o">=</span><span class="s2">&quot;Python interface to the c++ open quantum system program: DEOM&quot;</span><span class="p">,</span>
+     <span class="n">install_requires</span><span class="o">=</span><span class="n">requirements</span><span class="p">,</span>
+ <span class="p">)</span>
+</code></pre></div>
+and a <code>requirements.txt</code> file in this directory
+<div class="highlight"><pre><span></span><code>cvxopt==1.3.2
+numpy==1.22.1
+pandas==1.5.1
+scipy==1.7.3
+sympy==1.11.1
+</code></pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Seggestions</p>
+<p>If you don't already use <code>conda</code> to manage python environments, consider give it a try:
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>deom<span class="w"> </span>python
+
+<span class="c1"># when every you want to use this environment </span>
+conda<span class="w"> </span>acitvate<span class="w"> </span>deom
+</code></pre></div></p>
+</div>
+<p>Finally, feel free to use this one liner to install the package
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w"> </span>
+</code></pre></div></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.cd18aaf1.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
